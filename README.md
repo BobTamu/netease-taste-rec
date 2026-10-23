@@ -32,13 +32,13 @@ node scripts/fetch_playlist.js 3779629 playlist.json
 python scripts/build_profile.py playlist.json -o profile.json
 
 # 3. 情境层
-python scripts/weather.py "上海"
+python scripts/weather.py "北京"
 
 # 4. 原版校验
 python scripts/search_song.py "云烟成雨" "房东的猫"
 
 # 5. 出截图导入图
-python scripts/make_import_image.py songs.json out.png --title "每日推荐 2026-10-23"
+python scripts/make_import_image.py songs.json out.png --title "每日推荐 2026-01-01"
 ```
 
 ## 依赖

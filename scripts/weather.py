@@ -3,8 +3,8 @@
 
 Why this exists
 ---------------
-The skill used to call Open-Meteo with hard-coded Shanghai coordinates and a
-hard-coded `timezone=Asia/Shanghai`. That silently breaks for any other city:
+The skill used to call Open-Meteo with hard-coded coordinates for one city and a
+hard-coded `timezone`. That silently breaks for any other city:
 
   * Open-Meteo wants latitude/longitude, not a city name, so a geocoding step
     is required before the forecast call;
@@ -18,10 +18,10 @@ if a field is missing it is reported as null.
 
 Usage
 -----
-    python weather.py "上海"
+    python weather.py "北京"
     python weather.py "Tokyo"
     python weather.py "墨尔本" --json
-    python weather.py --lat 31.2304 --lon 121.4737 --tz Asia/Shanghai
+    python weather.py --lat 39.9042 --lon 116.4074 --tz Asia/Shanghai
 
 Exit codes: 0 ok, 1 geocoding failed, 2 forecast failed.
 """
@@ -217,7 +217,7 @@ def tone(cur, today, tomorrow):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("city", nargs="?", help="city name, e.g. 上海 / Tokyo")
+    ap.add_argument("city", nargs="?", help="city name, e.g. 北京 / Tokyo")
     ap.add_argument("--lat", type=float)
     ap.add_argument("--lon", type=float)
     ap.add_argument("--tz", default=None)
@@ -318,7 +318,7 @@ def main():
     for r in reasons:
         print(f"  - {r}")
     # Only dump the candidate list when the pick is genuinely doubtful.
-    # A clean hit like 上海 (24.9M) should stay quiet; a 13k-population
+    # A clean hit like a 20M+ megacity should stay quiet; a 13k-population
     # "朝阳" should not, because that is usually a wrong pick.
     chosen_pop = loc.get("population") or 0
     rival_pop = max([(x.get("population") or 0) for x in alts[1:]] or [0])

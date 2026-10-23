@@ -79,7 +79,7 @@ python scripts/build_profile.py me.json partner.json --weights 3,1 -o profile.js
 **a) 天气**——用脚本，不要手拼 URL：
 
 ```bash
-python scripts/weather.py "上海"
+python scripts/weather.py "北京"
 python scripts/weather.py "Tokyo" --json
 python scripts/weather.py "朝阳" --pick 1
 ```
@@ -146,7 +146,7 @@ hist_names = {norm(x["name"]) for r in history for x in r["songs"]}
 需要图片版时（网易云只能靠客户端截图导入）：
 
 ```bash
-python scripts/make_import_image.py songs.json out.png --title "每日推荐 2026-10-23"
+python scripts/make_import_image.py songs.json out.png --title "每日推荐 2026-01-01"
 ```
 
 白底黑字、单行一首、**不换行**（换行会破坏 OCR 的行归属）。也接受纯文本输入。

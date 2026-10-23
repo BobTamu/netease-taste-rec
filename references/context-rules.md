@@ -7,10 +7,10 @@
 ### 用脚本，不要手拼 URL
 
 ```bash
-python scripts/weather.py "上海"
+python scripts/weather.py "北京"
 python scripts/weather.py "Tokyo" --json
 python scripts/weather.py "朝阳" --pick 1
-python scripts/weather.py --lat 31.2304 --lon 121.4737 --tz Asia/Shanghai
+python scripts/weather.py --lat 39.9042 --lon 116.4074 --tz Asia/Shanghai
 ```
 
 手拼 URL 有两个必踩的坑：
@@ -38,7 +38,7 @@ python scripts/weather.py --lat 31.2304 --lon 121.4737 --tz Asia/Shanghai
 2. 选中地点人口 < 50 万
 3. 有竞争者人口 ≥ 选中项的 50%
 
-干净的命中（如上海 2,487 万）不刷候选，避免每天输出噪音。
+干净的命中（如人口 2000 万以上的一线城市）不刷候选，避免每天输出噪音。
 
 ### WMO 天气码
 

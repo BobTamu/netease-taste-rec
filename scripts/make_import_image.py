@@ -12,24 +12,24 @@ hard-coded into it. Now it takes the list as input.
 Usage
 -----
     python make_import_image.py songs.json out.png
-    python make_import_image.py songs.json out.png --title "每日推荐 2026-10-23"
-    python make_import_image.py songs.txt out.png --subtitle "上海 20℃ 小雨"
+    python make_import_image.py songs.json out.png --title "每日推荐 2026-01-01"
+    python make_import_image.py songs.txt out.png --subtitle "北京 -3℃ 晴"
 
 Input — JSON (preferred, keeps groups):
     {
-      "title": "每日推荐 2026-10-23",
-      "subtitle": "上海 20.3℃ 晴转阵雨 · 霜降 · 周五",
+      "title": "每日推荐 2026-01-01",
+      "subtitle": "北京 -3℃ 晴 · 工作日",
       "groups": [
-        {"name": "情境组", "songs": [["秋，落日与芦苇荡", "雪叶子"], ...]},
-        {"name": "华语拓展", "songs": [["云烟成雨", "房东的猫"], ...]}
+        {"name": "情境组", "songs": [["示例曲名一", "示例艺人甲"], ...]},
+        {"name": "华语拓展", "songs": [["示例曲名二", "示例艺人乙"], ...]}
       ]
     }
 
 Input — plain text (one song per line, "歌名 | 歌手" or "歌名 - 歌手";
 a line starting with "#" or "【" opens a new group):
     【情境组】
-    秋，落日与芦苇荡 | 雪叶子
-    坏掉的长途旅行 | 伏仪
+    示例曲名一 | 示例艺人甲
+    示例曲名二 | 示例艺人乙
 
 Requires Pillow (`pip install pillow`). Everything else is stdlib.
 """

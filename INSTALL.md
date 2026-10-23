@@ -66,7 +66,7 @@ python scripts/build_profile.py ./smoke/t.json -o ./smoke/p.json
 # 期望：sources / unique songs / language / top artists 各行都打印
 
 # 3) 天气（任意城市）
-python scripts/weather.py "上海"
+python scripts/weather.py "北京"
 # 期望：地点、当地时间、当前温湿度、基调、依据
 
 # 4) 单曲校验
@@ -108,11 +108,11 @@ python scripts/make_import_image.py ./smoke/t.json ./smoke/t.png
 {
   "generated": [
     {
-      "date": "2026-10-23",
-      "round": 8,
-      "context": "上海 20.3℃ 晴转阵雨 + 霜降 + 周五",
+      "date": "2026-01-01",
+      "round": 1,
+      "context": "北京 -3℃ 晴 + 工作日",
       "songs": [
-        {"group": "ctx", "name": "秋，落日与芦苇荡", "artist": "雪叶子"}
+        {"group": "ctx", "name": "示例曲名一", "artist": "示例艺人甲"}
       ]
     }
   ]
